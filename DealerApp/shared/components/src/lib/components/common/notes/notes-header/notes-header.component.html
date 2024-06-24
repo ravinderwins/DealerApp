@@ -1,0 +1,26 @@
+<div class="individual">
+  <div class="cust-info">
+    <label>{{ 'deal.notes.notes' | translate }}</label>
+  </div>
+  <div class="search">
+    <form class="search-form">
+      <div class="search-icon common-icon">
+        <span class="material-icons"> search </span>
+      </div>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          name="searchText"
+          [(ngModel)]="filter.searchText"
+          [placeholder]="'creditApp.list.searchNotes' | translate"
+          autocomplete="off"
+          (ngModelChange)="searchBounce.next($event)"
+          (keydown)="preventSpace($event)"
+        />
+      </mat-form-field>
+    </form>
+    <div class="note-flag">
+      <mat-icon class="flag-icon" [class.active]="isFlagged" (click)="toggleFlag()">flag</mat-icon>
+    </div>
+  </div>
+</div>

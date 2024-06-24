@@ -1,0 +1,123 @@
+.drag-container {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  border: dashed 1px #979797;
+  position: relative;
+  margin: 0 auto;
+  min-height: 245px;
+  border-radius: 8px;
+  input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .icon {
+    font-size: 55px;
+  }
+  h1 {
+    font-size: var(--app-font-size-xl);
+    font-family: var(--font-family-inter-semibold);
+    color: var(--app-primary);
+    line-height: 24px;
+  }
+  button {
+    color: var(--app-white-color);
+    width: 150px;
+    border-radius: 8px;
+    background-color: var(--app-primary);
+    padding: 8px 16px;
+    cursor: pointer;
+    display: block;
+    line-height: normal;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    font-size: 14px;
+    min-height: 37px;
+  }
+
+  label {
+    color: var(--app-white-color);
+    width: 150px;
+    border-radius: 8px;
+    background-color: var(--app-primary);
+    padding: 8px 16px;
+    cursor: pointer;
+    display: block;
+    line-height: normal;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+  }
+  .file-labels {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    label {
+      margin: 0;
+    }
+    button {
+      margin: 0;
+    }
+  }
+}
+
+.disabledButton {
+  border: 1px solid var(--app-default-color-2) !important;
+  cursor: not-allowed !important;
+}
+
+.drag-msg {
+  font-size: var(--app-font-size-xs);
+  font-style: italic;
+  text-align: center;
+  color: var(--app-black-color);
+}
+.picture-wrapper {
+  margin: 0 0 16px 0;
+  .picture-inner-wrapper {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #e2e3f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    span {
+      font-size: 35px;
+      color: #e2e3f4;
+    }
+  }
+}
+
+.video-dissable {
+  display: none;
+}
+
+.video-emabled {
+  video {
+    width: 100%;
+    height: 420px;
+  }
+}
+
+#canvas {
+  display: none;
+}
+
+.error-msg {
+  font-size: var(--app-font-size-sm);
+  font-style: italic;
+  text-align: center;
+  color: var(--app-red-color);
+  display: block;
+  max-width: 600px;
+  margin: 16px auto 0;
+}

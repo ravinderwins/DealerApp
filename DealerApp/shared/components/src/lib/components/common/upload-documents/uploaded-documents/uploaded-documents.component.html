@@ -1,0 +1,16 @@
+<ng-container body>
+  <div class="formContainer">
+    <ng-container>
+      <div class="wrapper">
+        <app-upload-docs-form
+          [uploadDocs]="uploadDocs"
+          [primaryCustomerName]="primaryCustomerName$ | async"
+          [type]="customerType$ | async"
+          [secondaryCustomerName]="secondaryCustomerName$ | async"
+          (dataChanged)="formValueChanged($event)"
+        ></app-upload-docs-form>
+      </div>
+      <app-upload-doc-section [files]="files$ | async" (updateFiles)="updateFiles($event)" (dataChanged)="dataChanged($event)"></app-upload-doc-section>
+    </ng-container>
+  </div>
+</ng-container>

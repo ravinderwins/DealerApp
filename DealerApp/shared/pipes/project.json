@@ -1,0 +1,24 @@
+{
+  "name": "shared-pipes",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shared/pipes/src",
+  "prefix": "app",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/pipes"],
+      "options": {
+        "jestConfig": "libs/shared/pipes/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/shared/pipes/src/**/*.ts", "libs/shared/pipes/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

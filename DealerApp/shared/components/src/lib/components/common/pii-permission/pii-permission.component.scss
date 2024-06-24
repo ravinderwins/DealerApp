@@ -1,0 +1,26 @@
+.permission {
+  width: 35px;
+  border: 1px solid var(--app-primary);
+  text-align: center;
+  border-radius: 4px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  .icon {
+    display: flex;
+    span {
+      color: var(--app-primary);
+      font-size: 20px;
+    }
+  }
+  &.active {
+    background-color: var(--app-primary);
+    .icon {
+      span {
+        color: var(--app-white-color);
+      }
+    }
+  }
+}

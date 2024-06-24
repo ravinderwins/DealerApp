@@ -1,0 +1,39 @@
+:host{
+ width:100%;
+}
+
+.title {
+  font-size:var(--app-font-size-xs);
+  line-height: 266%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--app-primary);
+  margin: 0 0 10px 0;
+}
+.signature-buttons {
+    display: flex;
+    margin: 0 0 24px 0;
+    background: #ffffff;
+    border: 1px solid #e2e3f4;
+    border-radius: 3px;
+    cursor: pointer;
+  .sign-btn {
+    width: 100%;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.15px;
+    color: rgba(0, 0, 0, 0.87);
+    border:0px;
+    background-color: transparent;
+    padding:10px;
+    border-right: 1px solid #e2e3f4;
+    &:last-child{
+     border-right:0px;
+    }
+    &.active{
+        background: rgba(0, 0, 0, 0.08);
+    }
+  }
+}

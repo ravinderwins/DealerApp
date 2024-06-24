@@ -1,0 +1,21 @@
+<div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutAlign="start center" class="row-container">
+  <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+    <div class="drag-container" #target (fileDropped)="onFileDropped($event)">
+      <ng-container>
+        <input
+          #fileDropRef
+          type="file"
+          id="fileDropRef"
+          [accept]="fileTypes"
+          [multiple]="multiple ? 'multiple': ''"
+          (change)="fileBrowseHandler($event)"
+        />
+        <span class="material-icons-outlined icon"> file_upload </span>
+        <h1>{{ 'deal.docs.uploadedDocuments.fileUpload' | translate }}</h1>
+        <h1>or</h1>
+        <label for="fileDropRef">{{ 'deal.docs.uploadedDocuments.fileDropRef' | translate }}</label>
+      </ng-container>
+    </div>
+    <div class="drag-msg">{{ 'deal.docs.uploadedDocuments.instruction' | translate }}</div>
+  </div>
+</div>

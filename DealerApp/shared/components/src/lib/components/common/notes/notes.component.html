@@ -1,0 +1,7 @@
+<div class="commonCard notes">
+  <div class="inner-wrapper">
+    <app-notes-header  (searchNote)="searchNote($event)"></app-notes-header>
+    <app-notes-content [notes]="notes" (updateNote)="updateNote($event)"></app-notes-content>
+    <app-notes-footer class="notes-footer" (saved)="saveNote($event)" #footerComponent></app-notes-footer>
+  </div>
+</div>

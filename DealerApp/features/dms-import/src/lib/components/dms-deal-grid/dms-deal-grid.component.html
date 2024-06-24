@@ -1,0 +1,14 @@
+<div class="commonCard">
+  <div class="body-content">
+    <app-mat-grid [data$]="deals$" [loaded]="loaded" [sortColumn]="defaultSortColumn" [sortDirection]="defaultSortDirection" [columns]="activeColumns">
+      <ng-template #actionColumn let-data let-index="index" let-column="column">
+        <mat-icon *ngIf="!isDmsRefresh" [matTooltip]="'common.import' | translate" [hidden]="data.status === 'Update'" class="icon actionIcon" (click)="importDeal(data)">
+          arrow_forward
+        </mat-icon>
+        <mat-icon *ngIf="isDmsRefresh"  [matTooltip]="'common.refresh' | translate" [hidden]="data.status === 'Update'" class="icon actionIcon" (click)="importDeal(data)">
+          refresh
+        </mat-icon>
+      </ng-template>
+    </app-mat-grid>
+  </div>
+</div>

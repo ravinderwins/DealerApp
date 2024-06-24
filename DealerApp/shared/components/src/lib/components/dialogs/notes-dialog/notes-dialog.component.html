@@ -1,0 +1,23 @@
+<app-base-dialog [title]="'deal.notes.addNote' | translate" (dialogClose)="close()">
+  <form #form="ngForm" body (ngSubmit)="submit()">
+    <div class="formContainer">
+      <div class="notes-dialog">
+        <app-text-editor
+          #textEditor
+          name="content"
+          [submitted]="form.submitted"
+          [required]="true"
+          [note]="note"
+          (change)="contentChanged($event)"
+        >
+        </app-text-editor>
+      </div>
+    </div>
+    <div class="action-btns">
+      <button type="button" color="primary" mat-stroked-button class="buttonOutline border-primary" (keyup.enter)="close()" (click)="close()">
+        {{ 'common.cancel' | translate }}
+      </button>
+      <button mat-raised-button color="primary" type="submit" class="buttonOutline">  {{ 'deal.notes.sendNote' | translate }}</button>
+    </div>
+  </form>
+</app-base-dialog>

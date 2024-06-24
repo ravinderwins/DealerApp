@@ -1,0 +1,209 @@
+:host {
+  background-color: #f9f9fd;
+  overflow-y: auto;
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  max-height: calc(100% - 195px);
+  }
+  
+  .body-content {
+    width:100%;
+    .divider {
+      position: relative;
+      text-align: center;
+  
+      label {
+        padding: 4px 16px;
+        width: auto;
+        background: #f9f9fd;
+        border: 1px solid #e2e3f4;
+        border-radius: 16px;
+        position: relative;
+      }
+  
+      &:before {
+        display: block;
+        content: '';
+        clear: both;
+        position: absolute;
+        top: 12px;
+        left: 0;
+        border-top: 1px solid #e2e3f4;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  
+    .note-content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 15px 0;
+      max-width: 620px;
+  
+      .note-content-wrapper {
+        max-width: 100%;
+        .note-wrapper {
+          background: #ffffff;
+          border: 1px solid #e2e3f4;
+          border-radius: 8px 8px 8px 0px;
+          padding: 12px;
+          position: relative;
+  
+          &::before {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            margin-top: 1px;
+            margin-left: 2px;
+            border-left: 10px solid transparent;
+            border-right: 11px solid transparent;
+            border-bottom: 15px solid #e2e3f4;
+            left: -12px;
+            bottom: -1px;
+          }
+  
+          &::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            margin-top: 1px;
+            margin-left: 2px;
+            border-left: 11px solid transparent;
+            border-right: 11px solid transparent;
+            border-bottom: 17px solid #fff;
+            left: -10px;
+            bottom: 0px;
+          }
+  
+          .note-name {
+            font-size: var(--app-font-size-sm);
+            line-height: 150%;
+            letter-spacing: 0.15px;
+            color: var(--primary-color);
+            font-family:var(--app-font-primary-semibold);
+            padding-bottom: 5px;
+            position: relative;
+            padding-right: 70px;
+            .note-message {
+              position: absolute;
+              right: 0;
+              top:1px;
+              p {
+                margin: 0;
+                font-size: var(--app-font-size-xs);
+                line-height: 130.5%;
+                letter-spacing: 0.4px;
+                color: rgba(0, 0, 0, 0.6);
+              }
+            }
+          }
+  
+          .note-subtitle {
+            font-size: 35px;
+            line-height: 116.7%;
+            color: rgba(0, 0, 0, 0.87);
+            margin: 0 0 15px 0;
+          }
+  
+          .note-desc {
+            font-size: var(--app-font-size-regular);
+            line-height: 143%;
+            letter-spacing: 0.15px;
+            padding-right: 20px;
+            ::ng-deep{
+              p{
+                margin:0;
+                .mention{
+                  font-family:var(--app-font-primary-semibold);
+                  color: var(--app-primary);
+                }
+              }
+            }
+            
+          }
+  
+          .note-link {
+            font-size: var(--app-font-size-regular);
+            line-height: 143%;
+            letter-spacing: 0.15px;
+            margin: 4px 0 0 0;
+  
+            a {
+              color: var(--app-primary);
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+  
+      &.sender {
+        justify-content: flex-end;
+        margin-left: auto;
+  
+        .note-content-wrapper {
+          .note-wrapper {
+            background: #e2e3f4;
+            position: relative;
+            max-width: 1000px;
+            min-width: 200px;
+  
+            &::before {
+              border: solid transparent;
+              content: ' ';
+              height: 0;
+              width: 0;
+              position: absolute;
+              pointer-events: none;
+              border-width: 29px;
+              margin-left: -14px;
+              border-bottom-color: #e2e3f4;
+              right: -14px;
+              bottom: -1px;
+              left: auto;
+            }
+  
+            &::after {
+              display: none;
+            }
+          }
+        }
+  
+        .note-flag {
+          mat-icon {
+            color:var(--app-primary) !important;    
+          }
+  
+          &.gray-note-flag {
+            mat-icon {
+              color: #9ea1b8 !important;
+            }
+          }
+  
+        }
+      }
+    }
+  
+    .notFoundMessage {
+      padding: 20px;
+    }
+  }
+  
+  
+  .flag-icon {
+    cursor: pointer;
+  
+    span {
+      color: white;
+    }
+  
+    &.active {
+      color: gray !important;
+    }
+  }

@@ -1,0 +1,23 @@
+<div class="body-content">
+  <ng-container *ngFor="let data of notes">
+    <div class="divider">
+      <label>{{ data.date | dateDay }}</label>
+    </div>
+    <div class="note-content sender" *ngFor="let note of data.notes">
+      <button class="note-flag" (click)="update(note)" mat-icon-button [class.gray-note-flag]="!note.isFlagged" >
+        <mat-icon class="flag-icon" >flag</mat-icon>
+      </button>
+      <div class="note-content-wrapper">
+        <div class="note-wrapper">
+          <div class="note-name">
+            {{ note.createUserName | titlecase }}
+            <div class="note-message">
+              <p>{{ note.createDateTimeUtc | dateUtc: 'h:mm a' }}</p>
+            </div>
+          </div>
+          <div class="note-desc" [innerHTML]="note.content"></div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

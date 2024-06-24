@@ -1,0 +1,67 @@
+.individual {
+    position: relative;
+    padding: 6px 24px;
+    display: flex;
+    justify-content: space-between;
+    min-height: auto;
+    border-bottom: 1px solid var(--app-default-color-2);
+    align-items: center;
+    .cust-info {
+      label {
+        font-size: var(--app-font-size-xxl);
+        line-height: 160%;
+        letter-spacing: 0.15px;
+        color: var(--app-black-color);
+        font-family: var(--app-font-primary-medium);
+      }
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      .search-form {
+        position: relative;
+        min-width: 270px;
+        .common-icon {
+          position: absolute;
+          top:45%;
+          transform: translateY(-50%);
+          height:50%;
+          align-items: center;
+          display: flex;
+          color: rgba(0, 0, 0, 0.6);
+          margin: 0 11px 0 0;
+          &.search-icon {
+            z-index: 1;
+            left: 8px;
+            cursor: pointer;
+          }
+          &.close-icon {
+            right: 0px;
+            cursor: pointer;
+            z-index: 1;
+          }
+        }
+        .mat-mdc-form-field {
+          width: 100%;
+          ::ng-deep.mat-mdc-text-field-wrapper {
+            margin: 0;
+            .mat-mdc-form-field-flex {
+              .mdc-notched-outline {
+                color: var(--app-primary);
+              }
+              .mat-mdc-form-field-infix {
+                padding-left: 24px;
+                padding-right: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+  }
+  .counts {
+    font-size:var(--app-font-size-18);
+    padding: 0 0 0 5px;
+  }

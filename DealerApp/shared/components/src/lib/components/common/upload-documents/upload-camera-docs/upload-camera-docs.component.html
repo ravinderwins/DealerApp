@@ -1,0 +1,28 @@
+<div class="drag-container" #target (fileDropped)="onFileDropped($event)">
+  <div class="picture-wrapper" *ngIf="!isEnableCamera">
+    <div class="picture-inner-wrapper">
+      <span class="material-icons-outlined"> photo_camera </span>
+    </div>
+  </div>
+  <div [class.video-dissable]="!isEnableCamera" [class.video-emabled]="isEnableCamera">
+    <video #video id="video" autoplay playsinline></video>
+    <img #picture alt="" />
+    <canvas #canvas id="canvas"></canvas>
+  </div>
+  <h1 [innerHTML]="'deal.docs.uploadedDocuments.enableCamera' | translate" *ngIf="!isEnableCamera"></h1>
+  <div class="file-labels">
+    <button
+      for="fileDropRef"
+      [class.disabledButton]="isAllowCamera"
+      [disabled]="isAllowCamera"
+      (click)="browserForFile(isEnableCamera, target)"
+      #focusButton
+      id="focusButton"
+    >
+      {{ takePictureLabel | translate }}
+    </button>
+    <button *ngIf="isEnableCamera" for="fileDropRef" (click)="stopCamera()">{{ 'common.cancel' | translate }}</button>
+  </div>
+  <span class="error-msg" *ngIf="isAllowCamera">{{ 'deal.docs.errorMessages.isDissableCamera' | translate }}</span>
+</div>
+<div class="drag-msg">{{ 'deal.docs.uploadedDocuments.instruction' | translate }}</div>

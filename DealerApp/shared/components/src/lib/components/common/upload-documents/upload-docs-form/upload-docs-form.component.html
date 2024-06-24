@@ -1,0 +1,24 @@
+<form #form="ngForm">
+    <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutAlign="start center">
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <app-config-items-dropdown name="type" [label]="'common.type' | translate" [type]="docType" [tabindex]="0"
+                [placeholder]="'common.type' | translate" [bindName]="true" [(ngModel)]="uploadForm.type"
+                [isNumericTypeValue]="false" [showDropdownOption]="false" [required]="true">
+            </app-config-items-dropdown>
+        </div>
+
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <app-dropdown name="customerName" [placeholder]="'Type'" [options]="customerName"
+                [(ngModel)]="uploadForm.customerName" [placeholder]="'deal.docs.uploadedDocuments.name' | translate"
+                label="{{ 'deal.docs.uploadedDocuments.name' | translate }}">
+            </app-dropdown>
+        </div>
+
+        <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+            <app-textarea name="description" label="{{ 'deal.docs.uploadedDocuments.description' | translate }}"
+                [placeholder]="'deal.docs.uploadedDocuments.description' | translate"
+                [(ngModel)]="uploadForm.description">
+            </app-textarea>
+        </div>
+    </div>
+</form>

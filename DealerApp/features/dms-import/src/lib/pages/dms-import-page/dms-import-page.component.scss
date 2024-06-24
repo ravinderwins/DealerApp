@@ -1,0 +1,60 @@
+@import 'styles/mixins/media-queries';
+.deal-wrapper {
+    position: relative;
+    padding: 12px 0px;
+    display: flex;
+    justify-content: space-between;
+    min-height: 74px;
+    align-items: center;
+    .deal-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        label {
+            color: var(--app-white-color);
+            margin: 0;
+            font-size: 20px;
+            line-height: 160%;
+            letter-spacing: 0.15px;
+            font-family: var(--app-font-primary-medium);
+            .name{
+                @include  for-tablet{
+                    min-width: calc(100% - 270px);
+                    display: inline-block;
+                    vertical-align: top;
+                }
+               
+            }
+        }
+    }
+    .deal-filter {
+        justify-content: flex-end;
+        font-size: 16px;
+        @include for-tablet {
+            font-size: 12px;
+        }
+        .deal-forms {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: flex-end;
+            .deal-title {
+                font-size: 14px;
+                letter-spacing: 0.15px;
+                color: var(--app-white-color);
+            }
+            .width-dropdown {
+                min-width: 220px;
+                max-width: 220px;
+            }
+        }
+    }
+}
+
+.body-content {
+    border-top: 1px solid var(--app-default-color-2);
+    .notFoundMessage {
+        padding: 30px;
+    }
+}

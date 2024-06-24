@@ -1,0 +1,12 @@
+<div class="common-tabs">
+  <nav mat-tab-nav-bar>
+    <ng-container>
+      <a mat-tab-link [ngClass]="{ active: isActiveUsersListView }" (click)="changeTab(true)">
+        {{ 'deal.docs.uploadedDocuments.upload' | translate }}
+      </a>
+      <a mat-tab-link [ngClass]="{ active: !isActiveUsersListView }" (click)="changeTab(false)">
+        {{ 'deal.docs.uploadedDocuments.takePicture' | translate }}
+      </a>
+    </ng-container>
+  </nav>
+</div>

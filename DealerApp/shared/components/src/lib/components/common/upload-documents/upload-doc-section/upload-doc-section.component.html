@@ -1,0 +1,28 @@
+<div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutAlign="start center" class="row-container">
+  <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+    <!-- For Tab Change -->
+    <app-docs-tab 
+      (tabChange)="tabChange($event)"
+    ></app-docs-tab>
+
+    <!-- For file Upload -->
+    <app-uploaded-files 
+      [files]="files" 
+      (delete)="deleteDoc($event)"
+    ></app-uploaded-files>
+
+    <!-- Docs Upload component -->
+    <app-upload-docs 
+      *ngIf="isActiveUsersListView" 
+      [multiple]="true"
+      (upload)="uploadDoc($event)"
+    ></app-upload-docs>
+
+    <!-- For Doc Upload by Camera -->
+    <app-upload-camera-docs 
+      *ngIf="!isActiveUsersListView" 
+      [multiple]="true" 
+      (upload)="uploadDoc($event)"
+    ></app-upload-camera-docs>
+  </div>
+</div>

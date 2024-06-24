@@ -1,0 +1,26 @@
+:host{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.commonCard {
+    &.notes{
+       height:100%;
+    }
+    .inner-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border-radius: 4px;
+        outline: 0;
+        height:100%;
+        .notes-footer{
+            bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.row-container{
+    margin: 0px -23px -24px 0px !important;
+  }
+    .upload-wrapper {
+      margin: 20px 0 10px 0;
+      .files-wrapper {
+        border: 1px dashed #e2e3f4;
+        border-radius: 8px;
+        padding: 12px;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        margin: 0 0 15px 0;
+        &:last-child {
+          margin: 0;
+        }
+        .files-doc {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          .file-icon {
+            span {
+              font-size: 38px;
+            }img{
+              width: 50px;
+              height: 50px;
+            }
+          }
+          .file-title {
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.87);
+            span {
+              display: block;
+              font-size: 12px;
+            }
+          }
+        }
+        .cross-icon {
+          span {
+            color: var(--app-red-color);
+            cursor: pointer;
+          }
+        }
+      }
+    }

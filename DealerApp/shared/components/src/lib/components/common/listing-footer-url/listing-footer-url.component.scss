@@ -1,0 +1,31 @@
+.default-footer {
+    padding: 24px;
+    background: #f9f9fd;
+    border-top: 1px solid var(--app-default-color-2);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    .default-title {
+      font-family: var(--app-font-primary-medium);
+      font-size: var(--app-font-size-xxl);
+      line-height: 160%;
+      letter-spacing: 0.15px;
+      color: rgba(0, 0, 0, 0.87);
+      margin: 0 0 14px 0;
+    }
+    .instructions{
+      font-style: italic;
+    }
+    
+    .default-link {
+      font-size: var(--app-font-size-xl);
+      line-height: 150%;
+      letter-spacing: 0.15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    margin-bottom: 20px;
+      a {
+        color: var(--app-primary);
+      }
+    }
+  }

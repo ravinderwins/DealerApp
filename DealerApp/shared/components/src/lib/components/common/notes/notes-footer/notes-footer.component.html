@@ -1,0 +1,19 @@
+<form #form="ngForm" (ngSubmit)="saveNote()">
+    <div class="send-box">
+      <div class="notes-dialog">
+        <app-text-editor
+          #textEditor
+          name="content"
+          [(ngModel)]="note.content"
+          [submitted]="form.submitted"
+          [isFlagged]="note.isFlagged"
+          [required]="true" 
+          (change)="contentChanged($event)"
+        >
+        </app-text-editor>
+        <div class="action-btns">
+          <button  mat-raised-button color="primary" type="submit" class="buttonOutline">{{'deal.notes.sendNote' | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </form>

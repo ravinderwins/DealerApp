@@ -1,0 +1,16 @@
+.send-box {
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    position: relative;
+    .action-btns {
+      margin: 0;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      button{
+       line-height:30px;
+       height:30px;
+      }
+    }
+  }
+  

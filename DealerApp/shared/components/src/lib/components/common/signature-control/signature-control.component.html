@@ -1,0 +1,29 @@
+<div class="title" *ngIf="customerName">{{ customerName }}{{ 'common.signature' | translate }}</div>
+<div class="signature-buttons">
+  <a class="sign-btn"  [ngClass]="{ active: showDrawSignature }" (click)="changeType(true)">{{ 'common.drawSignature' | translate }}</a>
+  <a class="sign-btn"  [ngClass]="{ active: !showDrawSignature }" (click)="changeType(false)">{{ 'common.typeSignature' | translate }}</a>
+</div>
+<div>
+  <app-signature-pad
+    *ngIf="showDrawSignature"
+    [disabled]="disabled"
+    [width]="width"
+    [required]="required"
+    [submitted]="submitted"
+    (signatureBase64)="emitSignature($event, true)"
+  ></app-signature-pad>
+  <app-text-signature
+    *ngIf="!showDrawSignature"
+    [id]="name"
+    [name]="name"
+    [placeholder]="placeholder"
+    [submitted]="submitted"
+    [tabindex]="0"
+    [label]="label"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+    [maxlength]="maxlength"
+    [required]="required"
+    (signatureBase64)="emitSignature($event)"
+  ></app-text-signature>
+</div>

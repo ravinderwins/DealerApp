@@ -1,0 +1,40 @@
+<app-base-dialog [title]="((isOtpSent$ | async) ? 'auth.enterVerificationCode': 'auth.sendOtpTitle') | translate" contentClass="mfa_verification_dialog" (dialogClose)="closeWindow()">
+  <ng-container *ngIf="(isOtpSent$ | async)===false" body>
+    <div class="content">
+      <p>{{ 'auth.mfaSendOtpInstructions' | translate }}</p>
+      <p>{{ data.mobilePhone | mask: '(000) 000-0000' | phoneNumberInception }}</p>
+
+      <button #saveButton mat-raised-button color="primary" class="buttonOutline" (click)="sendOtp()" (keyup.enter)="sendOtp()">Send Code</button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="(isOtpSent$ | async)" body>
+    <div class="content">
+      <p>{{ 'auth.mfaVerificationInstructions' | translate }} {{ data.mobilePhone | mask: '(000) 000-0000' | phoneNumberInception }}.</p>
+      <form #form="ngForm">
+        <div class="card-code">
+          <app-numeric
+            name="code"
+            [label]="'auth.enterVerificationCode' | translate"
+            [placeholder]="'auth.enterVerificationCode' | translate"
+            [maxlength]="6"
+            [minlength]="6"
+            [mask]="'000000'"
+            [maskFormat]="'123456'"
+            [maskedValue]="true"
+            [thousandSeparator]="''"
+            [required]="true"
+            [(ngModel)]="code"
+            [submitted]="form.submitted"
+          >
+          </app-numeric>
+          <p>
+            {{ 'auth.didntGetCode' | translate }} <a class="link" (click)="sendOtp()">{{ 'auth.clickToSend' | translate }}</a>
+          </p>
+        </div>
+        <div class="card-button">
+          <button mat-raised-button color="primary" (click)="verifyCode()" type="submit" class="buttonOutline">{{ 'auth.verifyCode' | translate }}</button>
+        </div>
+      </form>
+    </div>
+  </ng-container>
+</app-base-dialog>

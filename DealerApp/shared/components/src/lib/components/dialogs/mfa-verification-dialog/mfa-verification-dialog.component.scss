@@ -1,0 +1,36 @@
+::ng-deep.mfa_verification_dialog {
+    .modal-body {
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 25px;
+            p {
+                margin-bottom:10px!important;
+                text-align: center;
+               
+            }
+            button {
+                height: 40px;
+            }
+            .mat-primary {
+                width: 100%;
+                &.border-primary {
+                    margin-bottom: 15px;
+                }
+            }
+            .card-code {
+                p {
+                    margin-top: 15px!important;
+                    a {
+                        color: var(--black-color);
+                    }
+                }
+               
+            }
+            .card-button {
+                margin-top: 15px;
+            }
+        }
+    }
+}

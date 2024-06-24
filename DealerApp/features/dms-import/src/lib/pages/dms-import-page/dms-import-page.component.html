@@ -1,0 +1,52 @@
+<div class="margin-spacer">
+  <div class="deal-wrapper">
+    <div class="deal-title">
+      <ng-container *ngIf="!!dealId; else dmsImportTitle">
+        <app-page-details [heading]="'deal.dmsRefresh.title' | translate" (back)="goBack()"></app-page-details>
+        <label>
+         <span class ="ellipsis name" [matTooltip]="customerName">
+          {{ '- ' + customerName }}
+         </span> 
+           ({{ dealId | idPrefix: entityType }})</label>
+      </ng-container>
+      <ng-template #dmsImportTitle>
+        <app-page-details [heading]="'deal.dmsImport.title' | translate" (back)="goBack()"></app-page-details>
+      </ng-template>
+    </div>
+    <div class="deal-filter">
+      <div class="deal-forms">
+        <div class="common-dropdown deal-menu-dropdown width-dropdown">
+          <app-providers-dropdown
+            name="provider"
+            [label]="'deal.dmsImport.selectProvider' | translate"
+            [placeholder]="'deal.dmsImport.selectProvider' | translate"
+            [(ngModel)]="dmsForm.providerCode"
+            [type]="DMSProviderType"
+            [required]="true"
+            [bindCode]="true"
+            [showFirstSelection]="true"
+            (selection)="providerSelection($event)"
+          >
+          </app-providers-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="commonCard margin-spacer">
+    <app-dms-search [dealId]="dealId" [searchText]="dmsForm.searchText" (searchDmsDeal)="searchDeal($event)"></app-dms-search>
+  </div>
+</div>
+
+<ng-container *ngIf="dmsForm.searchText; else notSearchContent">
+  <app-dms-deal-grid
+    [provider]="provider"
+    [loaded]="loaded$ | async"
+    [deals$]="deals$"
+    [isDmsRefresh]="!!dealId"
+    (dmsDealAction)="dmsDealAction($event)"
+  ></app-dms-deal-grid>
+</ng-container>
+
+<ng-template #notSearchContent>
+  <app-no-record-found-card [message]="'deal.dmsImport.notFoundData'"></app-no-record-found-card>
+</ng-template>

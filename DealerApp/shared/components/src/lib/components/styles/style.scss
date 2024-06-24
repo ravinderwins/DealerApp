@@ -1,0 +1,109 @@
+@import 'styles/mixins/media-queries';
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+.input-group > .custom-select:not(:first-child),
+.input-group > .form-control:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.border-right-0 {
+  border-right: 0 !important;
+}
+.bg-transparent {
+  background-color: transparent !important;
+}
+.toggle-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .text {
+    width: 70px;
+  }
+}
+.radio-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px 0;
+}
+
+.cards-wrapper {
+  margin: 24px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(425px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  transform: translateZ(0);
+  transition: all 0.4s;
+}
+
+.cards-inner-wrapper {
+  display: flex;
+  padding: 6px 12px 18px;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--app-default-color-2);
+  background-color: #f9f9fd;
+  .toggle {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+  }
+  .amount {
+    width: 100%;
+  }
+  ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
+    background: #ffffff;
+  }
+}
+
+.address {
+  line-height: 150%;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: var(--app-font-size-regular);
+  font-family: var(--app-font-primary-bold);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  .warning-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .address-text{
+    cursor: pointer;
+  }
+  .county{
+    font-family: var(--app-font-primary-regular); 
+    font-style: italic;
+  }
+}
+
+.app-card-footer {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top: 1px solid var(--border-color);
+  background: var(--default-color-4);
+  justify-content: space-between !important;
+  .total-unit {
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    span {
+      color: rgba(0, 0, 0, 0.87);
+      font-family: var(--app-font-primary-bold);
+      font-size: var(--app-font-size-xl);
+      line-height: 150%;
+      letter-spacing: 0.15px;
+    }
+  }
+}
+
+.address-warning {
+  color: var(--warning);
+}

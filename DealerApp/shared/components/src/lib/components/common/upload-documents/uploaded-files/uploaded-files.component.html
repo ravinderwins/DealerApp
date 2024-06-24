@@ -1,0 +1,21 @@
+<div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutAlign="start center" class="row-container">
+    <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+
+        <div class="upload-wrapper" *ngFor="let file of files; let i = index">
+            <div class="files-wrapper">
+                <div class="files-doc">
+                    <div *ngIf="!file.imageUrl" class="file-icon"><span class="material-icons-outlined">
+                            {{iconImage(file.name)}} </span></div>
+                    <div *ngIf="file.imageUrl" class="file-icon">
+                        <span class="material-icons-outlined">
+                            <img [src]="file.imageUrl" class="preview" alt="image"> </span>
+                    </div>
+                    <div class="file-title">{{ file?.name }}<span>{{file?.size}}</span></div>
+                </div>
+                <div class="cross-icon" [matTooltip]="'common.deleteAction' | translate">
+                    <span class="material-icons-outlined" (click)="deleteFile(i)"> delete </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

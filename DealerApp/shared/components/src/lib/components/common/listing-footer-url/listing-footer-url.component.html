@@ -1,0 +1,8 @@
+<div class="default-footer">
+    <div class="default-title">{{ title | translate: { orgName: orgName } }}</div>
+    <div class="default-link">
+      <a [href]="url" target="_blank" rel="noopener"> {{ url }}</a> <app-clipboard-copy-icon [data]="url"></app-clipboard-copy-icon>
+    </div>
+    <div *ngIf="instructions" class="instructions">{{ instructions | translate }}</div>
+  </div>
+  

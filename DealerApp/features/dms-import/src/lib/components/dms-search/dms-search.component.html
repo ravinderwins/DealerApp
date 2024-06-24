@@ -1,0 +1,15 @@
+<form #form="ngForm" (ngSubmit)="form.valid && searchDeal()">
+    <div class="search-deal">
+        <div class="search-wrapper">
+            <div class="search-title">{{'deal.dmsImport.searchBy' | translate}}:</div>
+            <div class="search-input common-dropdown">
+                <app-text-input [pattern]="pattern" [required]="true" [submitted]="form.submitted" name="search" [label]="'common.search' | translate" [(ngModel)]="searchText" [maxlength]="100">
+                </app-text-input>
+            </div>
+            <button type="submit" class="show-button buttonOutline" mat-raised-button color="primary">{{'deal.dmsImport.searchDeals' | translate}}</button>
+        </div>
+        <div class="search-button">
+            <button type="submit" class="hide-button buttonOutline" mat-raised-button color="primary">{{'deal.dmsImport.searchDeals' | translate}}</button>
+        </div>
+    </div>
+</form>
